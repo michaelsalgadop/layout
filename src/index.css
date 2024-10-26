@@ -3,12 +3,15 @@
   --light-gray: #d8d5db;
   --gray: #adacb5;
   --white: #fff;
+  --altura-cabecera-pie: 100px;
 }
 * {
   box-sizing: border-box;
 }
 body {
   margin: 0;
+  color: var(--color-texto);
+  font-family: Poppins, sans-serif;
 }
 ul,
 ul li {
@@ -19,10 +22,18 @@ header,
 footer {
   background-color: var(--dark-blue);
   color: var(--white);
+  height: var(--altura-cabecera-pie);
 }
 main {
   background-color: var(--light-gray);
 }
 aside {
   background-color: var(--gray);
+}
+.contenedor {
+  min-height: calc(100vh - var(--altura-cabecera-pie) * 2);
+}
+header h1,
+footer p {
+  margin: 0;
 }

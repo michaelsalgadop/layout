@@ -1,40 +1,51 @@
 function App() {
+  const textoCabecera = "Título";
+  const titularNoticia = "Titular de la noticia";
+  const cuerpoNoticia =
+    "Lorem ipsum dolor, sit amet consectetur adipisicing elit. Verorepellendus esse odio laboriosam dolores eius, est velit inventore repudiandae, non veritatis corrupti nihil aliquid quidem quo voluptas sit. Harum, quia.";
+  const tituloCategorias = "Categorías";
+  const categorias = [
+    "Noticias de deporte",
+    "Noticias de ocio",
+    "Noticias de política",
+    "Noticias de espectáculos",
+  ];
+  const otrasCosas = ["Nosequé", "Nosecuántos", "Talycual"];
+  const copyright = true;
   return (
-    <div>
-      <header>
-        <h1>Título</h1>
+    <div className="contenedor container">
+      <header className="row align-items-center">
+        <h1 className="col m-0">{textoCabecera}</h1>
       </header>
-      <main>
-        <h2>Titular de la noticia</h2>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero
-          repellendus esse odio laboriosam dolores eius, est velit inventore
-          repudiandae, non veritatis corrupti nihil aliquid quidem quo voluptas
-          sit. Harum, quia.
+      <div className="contenedor row">
+        <main className="col-12 col-sm-7 col-md-8 py-4">
+          <h2>{titularNoticia}</h2>
+          <p>{cuerpoNoticia}</p>
+          <p>{cuerpoNoticia}</p>
+        </main>
+        <aside className="col-12 col-sm-5 col-md-4 py-4">
+          <h2>{tituloCategorias}</h2>
+          <ul className="list-unstyled">
+            {categorias.map((categoria) => (
+              <li key={categoria}>{categoria}</li>
+            ))}
+          </ul>
+          <h2>Otras cosas</h2>
+          <ul className="list-unstyled">
+            {otrasCosas.map((otraCosa) => (
+              <li key={otraCosa}>{otraCosa}</li>
+            ))}
+          </ul>
+        </aside>
+      </div>
+      <footer className="row align-items-center">
+        <p className="col text-center">
+          Texto del footer
+          {copyright && (
+            <span> - Ningún derecho reservado, copia lo que quieras</span>
+          )}
         </p>
-        <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod pariatur
-          delectus accusamus, ipsa eveniet qui cum iste molestias, consectetur
-          doloremque vitae impedit iure. Aliquid, aspernatur fuga sed dolore
-          nesciunt ducimus.
-        </p>
-      </main>
-      <aside>
-        <h2>Categorías</h2>
-        <ul>
-          <li>Noticias de deporte</li>
-          <li>Noticias de ocio</li>
-          <li>Noticias de política</li>
-          <li>Noticias de espectáculos</li>
-        </ul>
-        <h2>Otras cosas</h2>
-        <ul>
-          <li>Nosequé</li>
-          <li>Nosecuánto</li>
-          <li>Talycual</li>
-        </ul>
-      </aside>
-      <footer>Texto del footer</footer>
+      </footer>
     </div>
   );
 }
